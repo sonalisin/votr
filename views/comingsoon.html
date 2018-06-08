@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Votr</title>
+  <link rel="stylesheet" type="text/css" href="css/comingsoon.css">
+</head>
+<body>
+    <header id="header">
+        <h1>Votr</h1>
+        <script type="text/javascript">
+            window.onscroll = function(){myFunction};
+            var header = document.getElementById("header");
+            var sticky = header.offsetTop;
+
+            function myFunction(){
+                  if (window.pageYOffset >= sticky) {
+                    header.classList.add("sticky");
+                  } else {
+                    header.classList.remove("sticky");
+                  }
+            }
+         </script>
+
+    </header>
+
+</body>
+</html>

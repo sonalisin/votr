@@ -1,0 +1,193 @@
+body {
+    background-color: #ea806b;
+}
+
+.results-grid-container{
+    display: none;
+    grid-template-columns: repeat(12, 8.4vmin);
+    grid-template-rows: repeat(12, 8.4vmin);
+    grid-template-areas:
+                        "l l l l . . . . . . . ."
+                        "l l l l . . . . . . . ."
+                        ". m m m m m m m m . . ."
+                        ". m m m m m m m m . a a"
+                        "i i i i i i i i i i a a"
+                        "i i i i i i i i i i a a"
+                        "i i i i i i i i i i a a"
+                        ". h h h h h h h h . a a"
+                        ". . . . . . . . . . a a"
+                        ". t t t t t t t t . a a"
+                        "s s s s s s s s s s a a"
+                        "s s s s s s s s s s . .";
+    font-family: 'Tajawal', sans-serif;
+    color: white;
+}
+
+#header{
+    grid-area: l;
+    border: none;
+    background: none;
+}
+#match-text {
+    grid-area: m;
+    text-align: center;
+    justify-self: center;
+}
+
+#match-container {
+    grid-area: i;
+    justify-self: center;
+}
+
+#learn-more {
+    grid-area: h;
+    font-weight: 500;
+    justify-self: center;
+    text-align: center;
+}
+
+#share-title {
+    grid-area: t;
+    justify-self: center;
+}
+
+#share-panel {
+    grid-area: s;
+    justify-self: center;
+    padding: 0.5em;
+}
+
+#user-container{
+    grid-area: u;
+}
+
+#quiz-answers {
+    background-color: #d94c3e;
+    grid-area: a;
+    text-align: center;
+    padding: 0.8em;
+}
+
+#match, #plus, #user {
+    width: auto;
+    height: auto;
+}
+
+#match{
+    border-radius: 50%;
+}
+
+.share-images {
+    width: auto;
+    height: auto;
+}
+
+#loading-container {
+    font-family: 'Do Hyeon', sans-serif;
+    color: #072f52;
+    font-size: 3.5em;
+    display: grid;
+    grid-template-columns: repeat(12, 8.4vmin);
+    grid-template-rows: repeat(12, 8.4vmin);
+    grid-template-areas:
+            "l l l l . . . . . . . ."
+            "l l l l . . . . . . . ."
+            ". t t t t t t t t t t ."
+            ". t t t t t t t t t t ."
+            ". . c c c c c c c c . ."
+            ". . c c c c c c c c . ."
+            ". . c c c c c c c c . ."
+            ". . c c c c c c c c . ."
+            ". . c c c c c c c c . ."
+            ". . c c c c c c c c . ."
+            ". . c c c c c c c c . ."
+            ". . c c c c c c c c . .";
+}
+
+#loader {
+    grid-area: c;
+    height: auto;
+    width: auto;
+    -webkit-animation: spin 5s linear infinite;
+    animation: spin 5s linear infinite;
+}
+
+#loader-text {
+    grid-area: t;
+    text-align: center;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+h1 {
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 3em;
+}
+h2 {
+    font-size: 2.2em;
+    color: #072f52;
+}
+h3 {
+    font-size: 2em;
+    font-family: "Do Hyeon", sans-serif;
+    line-height: 1;
+    color: white;
+}
+h4 {
+    font-size: 1.2em;
+    line-height: 0.8;
+    color: #072f52;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #1e88e5;
+}
+
+a {
+    color: white;
+}
+
+/*below tooltip, hover formatting taken from https://www.w3schools.com/css/css_tooltip.asp*/
+.tooltip {
+    position: relative;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #072f52;
+    color: #fff;
+    text-align: center;
+    font-family: "Tajawal", "sans-serif";
+    font-weight: 300;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

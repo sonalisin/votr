@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Poppins');
+
+body {
+    background-color: navy;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8em;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4em;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5em;
+}
+
+p, dd {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+}
+
+hr{
+    width: 80%;
+    border-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: .25em;
+}
+
+dt {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 3.5em;
+}
+
+#splash {
+    text-align: center;
+    background-color: navy;
+    height: 100%;
+    color: white;
+}
+
+#team {
+    text-align: left;
+    background-color: white;
+    height: 100%;
+}
+
+#about {
+    text-align: right;
+    background-color: navy;
+    height: 100%;
+    color: white;
+
+}
+
+.container {
+    padding-left: 2em;
+    padding-right: 2em;
+}

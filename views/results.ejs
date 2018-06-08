@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+
+    <!--facebook open graph tags-->
+    <meta property="og:url"  content="https://stormy-falls-86366.herokuapp.com/"/>
+    <meta property="og:type"  content="article" />
+    <meta property="og:title"  content="Votr" />
+    <meta property="og:description"  content="Where does your vote lie?" />
+    <meta property="og:image" content="https://stormy-falls-86366.herokuapp.com/public/img/votr-logo.png"/>
+
+    <title>Results</title>
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:300,400,700|Do+Hyeon" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/results.css">
+    <script src="/public/javascript/results.js"></script>
+</head>
+
+<body onload="myFunction();setImage();setAnswers(<%='"'+answers+'"'%>,<%=JSON.stringify(qs)%>);">
+<div id="loading-container">
+    <div id="header"><img src="/public/img/votr-logo.png"></div>
+    <p id="loader-text">Finding your Party Match...</p>
+    <img id="loader" src="/public/img/cog-load.png">
+</div>
+
+<div class="results-grid-container" id="content">
+
+    <button id="header" onclick="goHome()" title="home"><img src="/public/img/votr-logo.png"></button>
+    <h1 id="match-text">It's a Match!</h1>
+
+
+    <!-- answers are inserted dynamically by external javascript file -->
+    <div id="quiz-answers">
+        <h3>Quiz Answers:</h3>
+    </div>
+    <div id="match-container">
+        <!-- TODO: Embedded corresponding DB Document Image -->
+        <img id="match" src="/public/img/demo-user-img.png">
+        <img id="plus" src="/public/img/match-plus.png">
+        <img id="user" src="/public/img/partyicons/<%=party.partyID%>icon.png">
+    </div>
+    <!-- This line prints out the Party Match -->
+    <h2 id="learn-more">Learn more about <strong><%=party.partyName%></strong> in the <a id="lh" href="<%=(answers === "NULL" )? "" : "../"%>../../learninghub/parties/<%=party.partyID%>" title="learning hub">Learning Hub >></a></h2>
+    <h3 id="share-title">Share your Match:</h3>
+    <div id="share-panel">
+        <a id="twitter" title="twitter"><img class="share-images" src="/public/img/twitter-share-logo.png"></a>
+        <img class="share-images" src="/public/img/facebook-share-logo.png" onclick="FB.ui(fbShareText)" tabindex="0" title="facebook post">
+        <img class="share-images" src="/public/img/messenger-share-logo.png" onclick="isMob.any()?sendMessenger():FB.ui(messText)" tabindex="0" title="facebook messenger">
+        <a id="mailto" title="share email"><img class="share-images" src="/public/img/email-share-logo.png"></a>
+        <img class="share-images" src="/public/img/copy-share-logo.png" onclick="copyPage()" tabindex="0" title="copy link">
+    </div>
+</div>
+</body>
+</html>

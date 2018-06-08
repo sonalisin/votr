@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir-="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:300,500,700|Do+Hyeon" rel="stylesheet">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <script src="../public/javascript/quiz.js"></script>
+    <title>Quiz</title>
+</head>
+<%qNum = parseInt(num)%>
+<body onload="initTally(<%=JSON.stringify(tally)%>);startQuiz(<%=qNum%>);initQ(<%=JSON.stringify(allQ)%>);">
+<div id="main-grid" class="grid-container">
+    <button id="header"><img src="../public/img/votr-logo.png" onclick="goHome()" title="home"></button>
+    <div class="grid-item" id="start"><br><%-startText%><br>
+        <fb:login-button size="xlarge" class="fbButton" title="Use my facebook profile" scope="public_profile" onlogin="FB.getLoginStatus(checkLogin)">
+            Use my profile picture</fb:login-button><br>
+        <button title="I'll give you my name" class="inner-button" onclick="provideName()">I'll just give you my name hun x</button><br><br>
+        <button title="start quiz" class="start-button" onclick="startQuiz(<%=qNum + 1%>)">START >></button></div>
+    <div class="question-container">
+    <%for(var i = 1; i < questions + 1; i++ ){%>
+    <%if(i == qNum + 1){%>
+    <div class="grid-item" id="selectBubble" ><%=i%></div>
+    <%}else{%>
+    <div class="grid-item" id="bubble"><%=i%></div>
+    <%}%>
+    <%}%>
+    </div>
+    <div class="grid-item" id="question"><%=theQuestion.qText%><br><br><button title="help" class="inner-button" onclick = "getHelp()">Help</button></div>
+    <div class="grid-item" id="help"><button title="return to question" class ="inner-button" onclick = "getQuestion()"><< Back To Qn</button><br><br><%=theQuestion.qHelp%></div>
+    <button onclick = "yesClick(<%=qNum%>)" class="grid-button" id="yes" title="yes">Yeah</button>
+    <button onclick = "noClick(<%=qNum%>)" class="grid-button" id="no" title="no">Nope</button>
+</div>
+
+</body>

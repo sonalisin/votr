@@ -1,0 +1,366 @@
+body {
+    background-color: #ea806b;
+    max-height: 100vmin;
+    max-width: 100vmin;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(12, 8.4vmin);
+    grid-template-rows: repeat(12, 8.4vmin);
+    grid-template-areas:    "l l l l . . . . . . . ."
+                            "l l l l . . . . . . . ."
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q . y y y y . n n n n ."
+                            "q . y y y y . n n n n ."
+                            "q . y y y y . n n n n ."
+                            "q . y y y y . n n n n .";
+    font-family: 'Tajawal', sans-serif;
+}
+
+.no-input-grid-container{
+    display: grid;
+    grid-template-columns: repeat(12, 8.4vmin);
+    grid-template-rows: repeat(12, 8.4vmin);
+    grid-template-areas:    "l l l l . . . . . . . ."
+                            "l l l l . . . . . . . ."
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c"
+                            "q c c c c c c c c c c c";
+    font-family: 'Tajawal', sans-serif;
+}
+
+.lh-grid-container{
+    display: grid;
+    grid-template-columns: repeat(12, 8.4vmin);
+    grid-template-rows: repeat(12, 8.4vmin);
+    grid-template-areas:    "l l l l h h h h . . . ."
+                            "l l l l h h h h . . . ."
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c"
+                            "t t . c c c c c c c c c";
+    font-family: 'Tajawal', sans-serif;
+}
+
+#lh-logo {
+    grid-area: h;
+}
+
+.home-grid-container{
+    display: grid;
+    grid-template-columns: repeat(12, 8.4vmin);
+    grid-template-rows: repeat(12, 8.4vmin);
+    grid-template-areas:    "l l l l . . . . . . . ."
+                            "l l l l . . . . . . . ."
+                            ". . . c c c c c c . . ."
+                            ". . . c c c c c c . . ."
+                            ". . . c c c c c c . . ."
+                            ". . . c c c c c c . . ."
+                            ". . . c c c c c c . . ."
+                            ". . . c c c c c c . . ."
+                            "a a a a a o o b b b b b"
+                            "a a a a a o o b b b b b"
+                            "a a a a a h h b b b b b"
+                            ". . . . . h h . . . . .";
+    font-family: 'Tajawal', sans-serif;
+    overflow: hidden;
+}
+
+#feature-a {
+    grid-area: a;
+    display: flex;
+    flex-basis: max-content;
+    align-items: center;
+    justify-content: center;
+}
+#feature-b {
+    grid-area: b;
+    display: flex;
+    flex-basis: max-content;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner {
+    height: 10em;
+}
+
+.question-container {
+    grid-area: q;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.grid-item{
+    border: solid #072f52 0.1em;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    justify-content: center;
+    box-shadow: 0.1em 0.1em #072f52;
+    color: white;
+}
+
+#nf-button {
+    grid-area: c;
+    background-color: #f1a196;
+    font-family: "Do Hyeon", sans-serif;
+    padding: 1.2em;
+    padding-top: 2em;
+    font-size: 2.5em;
+}
+
+#home-quiz-button{
+    grid-area: c;
+    background-color: #f1a196;
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 3.5em;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+#home-quiz-button:hover{
+    background-color: #1e88e5;
+}
+
+#home-lh-button{
+    grid-area: h;
+    background-color: #f1a196;
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 1.8em;
+    padding-top: .3em;
+}
+#home-lh-button:hover{
+    color: #1e88e5;
+}
+
+#home-skip-container{
+    grid-area: o;
+    font-family: "Tajawal", sans-serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    padding-top: 1.6em;
+    color: #072f52;
+    text-align: center;
+}
+
+/* Learning Hub -> scrollable content area */
+#lh-content{
+    grid-area: c;
+    background-color: #f1a196;
+    color: #072f52;
+    border-radius: 15%;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* scrollbar invisible */
+}
+
+.sidebar-container{
+    grid-area: t;
+    font-size: 1em;
+    grid-row-gap: 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#bubble{
+    font-family: 'Do Hyeon', sans-serif;
+    grid-column-start: 1;
+    grid-row-start: auto;
+    background-color: #f1a196;
+    font-size: 3em;
+}
+
+#lh-bubble{
+    font-family: 'Do Hyeon', sans-serif;
+    grid-column-start: 1;
+    grid-row-start: auto;
+    background-color: #1e88e5;
+    padding-top: 1.1em;
+    padding-left: .3em;
+    padding-right: .3em;
+    padding-bottom: 1.1em;
+    font-size: 2.2em;
+}
+#lh-select-bubble{
+    font-family: 'Do Hyeon', sans-serif;
+    grid-column-start: 1;
+    grid-row-start: auto;
+    background-color: white;
+    padding-top: 1.1em;
+    padding-left: .3em;
+    padding-right: .3em;
+    padding-bottom: 1.1em;
+    font-size: 2.2em;
+    color: #072f52;
+}
+
+#lh-bubble:hover {
+    color: #072f52;
+}
+
+#bubble:hover {
+    color: #1e88e5;
+}
+
+#selectBubble{
+    font-family: 'Do Hyeon', sans-serif;
+    grid-column-start: 1;
+    grid-row-start: auto;
+    background-color: #1e88e5;
+    font-size: 3em;
+}
+
+#header{
+    grid-area: l;
+    border-radius: 0%;
+    border: none;
+    background: none;
+}
+
+#question{
+    background-color: #f1a196;
+    color: #072f52;
+    border-radius: 15%;
+    grid-area: c;
+    padding: 1em;
+    text-align: center;
+    font-size: 2.8em;
+    font-weight: 500;
+}
+
+#help{
+    background-color: #f1a196;
+    color: #072f52;
+    border-radius: 15%;
+    grid-area: c;
+    display: none;
+    padding: 1em;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 300;
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* scrollbar invisible */
+}
+
+.grid-button{
+    color: white;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 4em;
+    background-color: #d94c3e;
+    grid-area: y;
+    border-radius: 50%;
+    border: solid #072f52 0.1em;
+    box-shadow: 0.1em 0.1em #072f52;
+}
+
+.grid-button:hover {
+    color: #1e88e5;
+    font-size: 5em;
+}
+
+#no{
+    grid-area: n;
+    border-radius: 50%;
+}
+#start{
+    border-radius: 15%;
+    grid-area: c;
+    z-index: 2;
+    background-color: #1e88e5;
+    display: none;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    font-size: 2em;
+    font-weight: 300;
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* scrollbar invisible */
+}
+
+.start-button {
+    background-color: #d94c3e;
+    font-family: 'Do Hyeon', sans-serif;
+    color: white;
+    font-size: 2.2em;
+}
+.start-button:hover {
+    background-color: white;
+    color: #1e88e5;
+}
+
+.inner-button {
+    background-color: #d94c3e;
+    font-family: 'Do Hyeon', sans-serif;
+    color: white;
+    font-size: 1em;
+}
+
+.inner-button:hover {
+    color: #1e88e5;
+}
+
+.icons {
+    height: 10em;
+    width: 10em;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+h1 {
+    font-family: 'Do Hyeon', sans-serif;
+    color: white;
+}
+h2 {
+    font-family: 'Do Hyeon', sans-serif;
+    color: white;
+    font-size: 3.5em;
+}
+h3 {
+    font-family: 'Tajawal', sans-serif;
+    color: #072f52;
+    font-weight: 500;
+    font-size: 2em;
+}
+
+a {
+    color: #1e88e5;
+}
+a:visited {
+    color: white;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:300,400,700|Do+Hyeon" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <script src="/public/javascript/learninghub.js"></script>
+    <title>Learning Hub</title>
+</head>
+<body>
+<div class="lh-grid-container">
+    <div id="header"><img src="/public/img/votr-logo.png" onclick="goHome()"></div>
+    <div id="lh-logo"><img src="/public/img/learning-hub-logo.png" onclick="goLH()"></div>
+    <div class="sidebar-container">
+        <%for(var i = 0; i < topics.length; i++ ){%>
+        <%var topicPath = '\''+topics[i].path+'\'';%>
+        <%if (topics[i].path == currTopic.path) {%>
+        <div class="grid-item" id="lh-select-bubble" onclick="goTo(<%=topicPath%>)"><%=topics[i].topic%></div>
+        <%}else{%>
+        <div class="grid-item" id="lh-bubble" onclick="goTo(<%=topicPath%>)"><%=topics[i].topic%></div>
+        <%}%>
+        <%}%>
+    </div>
+    <div class="grid-item" id="lh-content">
+        <%if(currTopic.path !== "parties" && partyPath == "NULL"){%>
+        <h2><%=currTopic.topic%></h2>
+        <h3><%=currTopic.content%></h3>
+        <%}else if(currTopic.path == "parties" && partyPath == "NULL"){%>
+        <h2><%=currTopic.topic%></h2>
+        <%for(var i = 0; i < parties.length; i++ ){%>
+        <img class="icons" onclick="goToParty('<%=parties[i].partyID%>')" src="/public/img/partyicons/<%=parties[i].partyID%>icon.png" alt="<%=parties[i].partyName%> Icon">
+        <%}%>
+        <%}else if(currTopic.path == "parties" && partyPath !== "NULL") {%>
+        <h2><a href="<%=currParty.partyURL%>"><%=currParty.partyName%><br></a></h2>
+        <img class="icons" src="/public/img/partyicons/<%=currParty.partyID%>icon.png" alt="<%=currParty.partyName%> Icon">
+        <h3><%=currParty.partyDesc%></h3>
+        <%}%>
+    </div>
+</div>
+</body>
+</html>
