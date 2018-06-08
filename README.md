@@ -1,4 +1,5 @@
-# info30005-2018-nf
+# INFO30005 Web Information Technology 
+Final Project - 404NotFound
 
 # VOTR
 VOTR is a social project aimed at promoting informed youth voters in Australia
